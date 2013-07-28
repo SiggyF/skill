@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+  <!--<![endif]-->
+  <meta charset="utf-8">
+  <!-- jQuery -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="${request.static_url('skill:static/js/plugins/jquery.beforeafter-1.4.min.js')}"></script>
+  <!-- Plugins -->
+
+</script>
+<%
+   computed = df[df.source=='Computed'].irow(0)
+   measured = df[df.source=='Measured'].irow(0)
+   %>
+<div id="container">
+  <div><img alt="before" src="${request.route_url('image', id=measured.name)}" width="700" height="400" /></div>
+  <div><img alt="after" src="${request.route_url('image', id=computed.name)}"  width="700" height="400" /></div>
+</div>
+<script type="text/javascript" src="${request.static_url('skill:static/js/detail.js')}"></script>
+
+</html>
