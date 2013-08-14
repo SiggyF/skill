@@ -3,7 +3,6 @@
 <!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if IE 8]>   <html class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" class="no-js">
   <!--<![endif]-->
   <head>
     <meta charset="utf-8">
@@ -86,9 +85,10 @@
     </div>
   </header>
   % for (quantity, df_by_quantity) in df.groupby(['quantity']):
-  <div >
-    <h2>${quantity.capitalize()}</h2>
-    <div class="padded sortable">
+  <div>
+    <h2 class="responsive" data-max="50">${quantity.capitalize()}</h2>
+    <div class="round callout pull-left gapped"><b>Sort</b> the rows based on how good the model (<em>left</em>) matches the measurement (<em>right</em>). </div>
+    <div class="sortable gapped clear">
       % for (period, df_by_period) in df_by_quantity.groupby(['period']):
 
         % if len(df_by_period) == 2:
@@ -112,4 +112,3 @@
   <script type="text/javascript" src="${request.static_url('skill:static/js/plugins/jquery.cycle2.js')}"></script>
   <script type="text/javascript" src="${request.static_url('skill:static/js/groundwork.all.js')}"></script>
   <script type="text/javascript" src="${request.static_url('skill:static/js/experiment.js')}"></script>
-</html>
