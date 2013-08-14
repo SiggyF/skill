@@ -1,4 +1,4 @@
 $(function(){
 
-    $('#container').beforeAfter();
+    $('#merged').beforeAfter({imagePath : '/static/images/'});
 });

@@ -17,7 +17,7 @@
    computed = df[df.source=='Computed'].irow(0)
    measured = df[df.source=='Measured'].irow(0)
    %>
-<div id="container">
+<div id="merged">
   <div><img alt="before" src="${request.route_url('image', id=measured.name)}" width="700" height="400" /></div>
   <div><img alt="after" src="${request.route_url('image', id=computed.name)}"  width="700" height="400" /></div>
 </div>
