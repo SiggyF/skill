@@ -88,7 +88,9 @@
   <div>
     <h2 class="responsive" data-max="50">${quantity.capitalize()}</h2>
     <div class="round callout pull-left gapped"><b>Sort</b> the rows based on how good the model (<em>left</em>) matches the measurement (<em>right</em>). </div>
+
     <div class="sortable gapped clear">
+      <div>ok</div>
       % for (period, df_by_period) in df_by_quantity.groupby(['period']):
 
         % if len(df_by_period) == 2:
